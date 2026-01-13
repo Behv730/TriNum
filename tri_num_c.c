@@ -9,9 +9,7 @@ bool isTriNumIter(unsigned int num);
 bool isTriNumAlg(unsigned int num);
 static inline unsigned int sumNatNumsEuler(unsigned int num);
 
-int main(int argc, char **argv) {
-
-  if (argc != 3) {
+int main(int argc, char **argv) { if (argc != 3) {
     printf("[tri_num_c] ERROR Expected 2 argument\n");
     printf("[tri_num_c] ERROR Usage: ./is_tri_num -[option] [the number]\n");
     printf("[tri_num_c] ERROR options: -i for iterative method\n");
@@ -19,10 +17,15 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  unsigned int input_num = strtoul(argv[2], NULL, 0); // TODO: error check, char eda ehv
+  unsigned int input_num =
+      strtoul(argv[2], NULL, 0); // TODO: error check, char eda ehv
 
-  // ./tri_num_c   -a        222   ...
-  // argv[0]      argv[1][1]    argv[2] ...
+  if (input_num == 21 || input_num == 7 || input_num == 3){
+    printf("[tri_num_c] Did you know that 3 * 7 is 21?\n[tri_num_c] and 3 AND "
+           "21 are triangle numbers?!\n[tri_num_c] NANI?!?!");
+    return 0;
+  }
+
   switch (argv[1][1]) {
   case 'i':
     printf("[tri_num_c] %u is %s triangle number\n[tri_num_c] obtained using "
@@ -35,7 +38,7 @@ int main(int argc, char **argv) {
            "algebraic method",
            input_num, isTriNumAlg(input_num) ? "a" : "not a");
     break;
-
+  // This is for a special someone :*
   case 'd':
   case 'D':
     printf("Cutieeeeeee\n");
