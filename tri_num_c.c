@@ -19,14 +19,20 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  unsigned int input_num = strtoul(argv[1], NULL,0); // TODO: error check, char eda ehv
+  unsigned int input_num =
+      strtoul(argv[1], NULL, 0); // TODO: error check, char eda ehv
   // result
+  // printf("[tri_num_c] %u is %s triangle number\n", input_num,
+  //        isTriNumIter(input_num) ? "a" : "not a");
+  
   printf("[tri_num_c] %u is %s triangle number\n", input_num,
-         isTriNumIter(input_num) ? "a" : "not a");
+         isTriNumAlg(input_num) ? "a" : "not a");
   return 0;
 }
 
-static inline unsigned int sumNatNumsEuler(unsigned int n) { return (n * (n + 1)) / 2; }
+static inline unsigned int sumNatNumsEuler(unsigned int n) {
+  return (n * (n + 1)) / 2;
+}
 
 // itterative method of checking
 bool isTriNumIter(unsigned int num) {
@@ -41,10 +47,13 @@ bool isTriNumIter(unsigned int num) {
   }
 }
 
+// algebraic method
 bool isTriNumAlg(unsigned int num) {
-  // hvad ef num er -tala?
+  // byggd a D-reglu aka imbu/batman
+  // x_1,x_2 = (-b +- sqrt(b^2-4ac))/2a
   float N = (1 + sqrtf(1 + (4 * 2 * num))) / 2;
-  if (N == ceilf(N)){return true;};
+  if (N == ceilf(N)) {
+    return true;
+  }; // checka ef N er heiltala
   return false;
-  //
 };
