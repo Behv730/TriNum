@@ -2,7 +2,7 @@
 A progam that checks if a given number is a [triangle number](https://en.wikipedia.org/wiki/Triangular_number).
 The idea came when hearing a funny story about this blokes favorite multiplication of two numbers.
 
-## Prerequisits
+## Prerequisites
 The Haskell compiler ghc and it's sibling ghci, they can be installed from [here](https://www.haskell.org/ghcup/)
 
 # Usage
