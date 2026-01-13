@@ -11,7 +11,7 @@ tri_num_hs: tri_num_hs.hs
 
 # C
 tri_num_c: tri_num_c.c
-	cc tri_num_c.c -o tri_num_c
+	cc tri_num_c.c -lm -o tri_num_c
 	mv tri_num_c tri_num_c.o build/
 	echo "C compilation finished"
 
