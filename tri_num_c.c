@@ -1,3 +1,4 @@
+// co-author: DagrunKristin
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -9,24 +10,43 @@ bool isTriNumAlg(unsigned int num);
 static inline unsigned int sumNatNumsEuler(unsigned int num);
 
 int main(int argc, char **argv) {
-  // input handling
-  // Usage: ./is_tri_num -[option] -[number]
-  // options: -i fyrir iterative
-  //          -a fyrir algebraic
 
-  if (argc != 2) {
-    printf("[tri_num_c] Expected 1 argument\n");
+  if (argc != 3) {
+    printf("[tri_num_c] ERROR Expected 2 argument\n");
+    printf("[tri_num_c] ERROR Usage: ./is_tri_num -[option] [the number]\n");
+    printf("[tri_num_c] ERROR options: -i for iterative method\n");
+    printf("[tri_num_c] ERROR          -a for algebraic method\n");
     return 1;
   }
 
   unsigned int input_num =
       strtoul(argv[1], NULL, 0); // TODO: error check, char eda ehv
-  // result
-  // printf("[tri_num_c] %u is %s triangle number\n", input_num,
-  //        isTriNumIter(input_num) ? "a" : "not a");
-  
-  printf("[tri_num_c] %u is %s triangle number\n", input_num,
-         isTriNumAlg(input_num) ? "a" : "not a");
+
+  // ./tri_num_c   -a        222   ...
+  // argv[0]      argv[1][1]    argv[2] ...
+  switch (argv[1][1]) {
+  case 'i':
+    printf("[tri_num_c] %u is %s triangle number\n[tri_num_c] obtained using "
+           "iterative method",
+           input_num, isTriNumIter(input_num) ? "a" : "not a");
+    break;
+
+  case 'a':
+    printf("[tri_num_c] %u is %s triangle number\n[tri_num_c] obtained using "
+           "algebraic method",
+           input_num, isTriNumAlg(input_num) ? "a" : "not a");
+    break;
+
+  case 'd':
+  case 'D':
+    printf("Cutieeeeeee\n");
+    break;
+
+  default:
+    printf("[tri_num_c] ERROR expected -a or -i but got %c\n", argv[1][1]);
+    printf("[tri_num_c] ERROR get a live looser");
+  }
+
   return 0;
 }
 
