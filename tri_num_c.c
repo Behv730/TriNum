@@ -19,8 +19,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  unsigned int input_num =
-      strtoul(argv[1], NULL, 0); // TODO: error check, char eda ehv
+  unsigned int input_num = strtoul(argv[2], NULL, 0); // TODO: error check, char eda ehv
 
   // ./tri_num_c   -a        222   ...
   // argv[0]      argv[1][1]    argv[2] ...
