@@ -9,7 +9,9 @@ The Haskell compiler ghc and it's sibling ghci, they can be installed from [here
 run `make all` in your terminal. This yields 2 executables, one from each language.\
 To use the C one:
 ```sh
-./build/tri_num_c 21
+./build/tri_num_c -i 21
+# or
+./build/tri_num_c -a 9 
 ```
 and the Haskell one:
 ```sh

@@ -1,4 +1,4 @@
-// co-author: DagrunKristin
+// co-author: DagrunKristin aka DaggaSwag
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
